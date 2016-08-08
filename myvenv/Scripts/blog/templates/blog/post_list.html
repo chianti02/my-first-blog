@@ -5,7 +5,8 @@
 	<body>
 		<div>
 		<h1>Bio</h1>
-		<h2>I am 11 years old calico.</h2>
+		<h2>I am 11 years old calico.</h2> </br>
+		<p> {{post}} </p>
 		</div>
 		
 		<div>
@@ -18,7 +19,10 @@
 		</div>
 		
 		<div>
-		<h1>Ask me anything</h1>
+		<h1>Post List</h1>
+		<p>{% for post in posts %}
+		{{ post }}
+		{% endfor %}</p>
 		</div>
 	</body>
 </html>
