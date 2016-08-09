@@ -1,28 +1,12 @@
-<html>
-	<head>
-		<title>Honey Meow Meow</title>
-	</head>
-	<body>
-		<div>
-		<h1>Bio</h1>
-		<h2>I am 11 years old calico.</h2> </br>
-		<p> {{post}} </p>
-		</div>
-		
-		<div>
-		<h1>My fav food</h1>
-			<p>
-			1. <a href="http://www.radfood.com/">Rad Cat</a>
-			2. <a href="http://www.bestfriendsfoods.com/">BFF canned food</a>
-			3. <a href="http://www.tikipets.com/">Tiki</a>
-			</p>	
-		</div>
-		
-		<div>
-		<h1>Post List</h1>
-		<p>{% for post in posts %}
-		{{ post }}
-		{% endfor %}</p>
-		</div>
-	</body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+    <div class="post">
+        <div class="date">
+            {{ post.published_date }}
+        </div>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+{% endblock %}
